@@ -25,10 +25,16 @@ function validar(){
 
     if (textarea.match(caracteres)|| textarea.match(mayusculas)){
         alert ('SOLO LETRAS MINUSCULAS Y SIN ACENTOS');
+        document.querySelector('#texto_entrada').value='';//Poner el textaera en blanco
+        foco();//Enfocar el cursor en el textarea
     } else if (textarea.match(numero)) {
         alert('NO SE PERMITEN NUMEROS');
+        document.querySelector('#texto_entrada').value='';
+        foco();
     } else if (textarea == vacio) {
         alert('INGRESE UN MENSAJE PARA ENCRIPTAR');
+        document.querySelector('#texto_entrada').value='';
+        foco();
     } else{
         ocultar();
         textoEncriptar.textContent = encriptar(textoIngreso);        
